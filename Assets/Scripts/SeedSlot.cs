@@ -36,6 +36,7 @@ public class SeedSlot : MonoBehaviour
                 //Destroy(collision.gameObject);
                 this.GetComponent<SpriteRenderer>().sprite = root;
                 collision.gameObject.GetComponent<SpriteRenderer>().sprite = sleepingSeed;
+                Instantiate(Seed, pos.position, pos.rotation);
                 this.is_filled = true;
             }
         }
@@ -44,9 +45,10 @@ public class SeedSlot : MonoBehaviour
             if (collision.gameObject.tag.Equals("Seed"))
             {
                 Destroy(collision.gameObject);
+                Instantiate(Seed, pos.position, pos.rotation);
             }
         }
-        Instantiate(Seed, pos.position, pos.rotation);
+        
 
     }
 }
