@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - wateringCan
+  - Seed
+  - Limit
   layers:
   - Default
   - TransparentFX

@@ -61,6 +61,10 @@
     <Compile Include="Assets\Scripts\playerController.cs" />
     <Compile Include="Assets\Scripts\SeedController.cs" />
     <Compile Include="Assets\Scripts\RefillableBase.cs" />
+    <Compile Include="Assets\Scripts\DogLauncherController.cs" />
+    <Compile Include="Assets\Municion.cs" />
+    <Compile Include="Assets\Scripts\MunicionController.cs" />
+    <Compile Include="Assets\Scripts\SeedSlot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

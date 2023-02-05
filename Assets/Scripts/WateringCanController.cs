@@ -7,26 +7,34 @@ public class WateringCanController : RefillableBase
 {
 
     [SerializeField] private bool is_watering;
-    [SerializeField] private float delay;
-    public float timeRemaining = 10;
-    public bool timerIsRunning = false;
+    Animator animationManager;
 
-    private void Update()
+
+    private void Start()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log($" /////// {System.DateTime.Now}");
-        }
-        if (Input.GetMouseButton(0))
-        {
-            giveFill(0.008f);
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            Debug.Log($" /////// {System.DateTime.Now}");
-        }
+        animationManager = GetComponent<Animator>();
 
     }
+    private void Update()
+    {
+        if (ActualFill > 0)
+        {
 
+            if (Input.GetMouseButtonDown(0))
+            {
+                animationManager.SetTrigger("starWatering");
+            }
+            if (Input.GetMouseButton(0))
+            {
+                giveFill(0.008f);
+            }
+            
+        }
+        if (Input.GetMouseButtonUp(0))
+            {
+                animationManager.SetTrigger("endWatering");
+            }
+
+    }
 
 }
