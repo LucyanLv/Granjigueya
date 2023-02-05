@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class ThankController : RefillableBase
 {
+    Animator animationManager;
+
+    private void Start()
+    {
+        animationManager = GetComponent<Animator>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("wateringCan"))
         {
+            animationManager.SetBool("canFill", true);
             RefillWaterCan(collision.gameObject.GetComponent<WateringCanController>());
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        animationManager.SetBool("canFill", false);
     }
 
 
